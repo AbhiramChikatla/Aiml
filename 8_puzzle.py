@@ -78,3 +78,41 @@ if solution_path:
         print(step)
 else:
     print("No solution found.")
+
+
+
+# AIM:
+# Implement an 8-puzzle solver using Heuristic search technique.
+
+# DESCRIPTION:
+# The 8-puzzle is a classic problem in artificial intelligence and search algorithms. It consists of a 3x3 grid with 8
+# numbered tiles and one empty space. The goal is to rearrange the tiles to match a specific goal configuration using
+# the least number of moves. The Heuristic search technique, specifically the A* (A-star) algorithm, is commonly
+# used to solve this problem.
+# A* search combines features of both uniform-cost search and pure heuristic search by minimizing the function:
+# f(n)=g(n)+h(n) where:
+#  g(n) is the cost to reach the current node.
+#  h(n) is the heuristic estimate of the cost to reach the goal from the current node.
+# Two common heuristics used in the 8-puzzle are:
+# 1. Manhattan Distance: The sum of the absolute differences between the current position and the goal position
+# of each tile.
+# 2. Misplaced Tiles: The number of tiles not in their goal position.
+
+
+# ALGORITHM:
+# 1. Initialize the Start State:
+#  Define the start state and goal state of the puzzle.
+# 2. Heuristic Function:
+#  Calculate the Manhattan Distance or the number of misplaced tiles for the current state.
+# 3. Priority Queue (Min-Heap):
+#  Use a priority queue to store nodes with their f(n) values. The node with the smallest f(n) is expanded
+# first.
+# 4. Expand Nodes:
+#  For the current state, generate possible moves (up, down, left, right).
+#  For each move, calculate the new state's f(n)=g(n)+h(n) and push it into the priority queue.
+# 5. Check for Goal State:
+#  If the current state matches the goal state, the puzzle is solved.
+# 6. Repeat:
+#  Repeat steps 4 and 5 until the goal state is found or the queue is empty.
+# 7. Output Solution Path:
+#  Once the goal state is reached, backtrack to retrieve the path and print the moves.

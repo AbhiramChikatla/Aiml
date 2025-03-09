@@ -96,3 +96,40 @@ start = (0, 0)
 goal = (5, 5)
 path = a_star_algorithm(grid, start, goal)
 print("Path:", path)
+
+
+
+# Implement A* algorithm on any problem.
+
+# DESCRIPTION:
+# The A* (A-star) algorithm is a popular pathfinding and graph traversal algorithm used to find the shortest path
+# between two nodes in a weighted graph. It is widely used in various applications, including GPS navigation
+# systems, video games, and AI systems. A* is an informed search algorithm, meaning it uses knowledge of the
+# goal to make decisions that are likely to lead to the optimal path.
+# The A* algorithm combines features of Dijkstra's algorithm and Greedy Best-First-Search. It uses a heuristic
+# function to estimate the cost from a node to the goal, allowing it to prioritize paths that appear to be more
+# promising.
+# Problem Statement
+# We will implement the A* algorithm to solve the problem of finding the shortest path in a grid. The grid will
+# have obstacles, and the algorithm will need to navigate around these obstacles to find the shortest path from the
+# start position to the goal.
+
+# ALGORITHM:
+# 1. Initialize:
+#  Create an open list containing the start node. The open list keeps track of nodes that need to be
+# evaluated.
+#  Create a closed list, initially empty, to keep track of nodes that have already been evaluated.
+# 2. Loop until the open list is empty:
+# 1. Select the node with the lowest f(n) value (where f(n) = g(n) + h(n)) from the open list. Set this
+# node as the current node.
+# 2. If the current node is the goal, trace the path from the start node to the goal and return the path.
+# 3. Move the current node to the closed list.
+# 4. For each neighbor of the current node:
+# 1. If the neighbor is in the closed list, skip it.
+# 2. Calculate the tentative g score (the cost to reach this neighbor).
+# 3. If the neighbor is not in the open list, add it and calculate the f(n) value. Set its parent to the
+# current node.
+# 4. If the neighbor is in the open list but the new g score is lower, update the neighbor's g and f
+# values and change its parent to the current node.
+# Return:
+#  If the open list is empty and the goal has not been reached, return that no path exists.
