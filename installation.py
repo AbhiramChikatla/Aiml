@@ -15,7 +15,6 @@
 # # Step 1: Install Python and ensure it's added to PATH
 # # Step 2: Verify Python and pip installation
 
-# 17 | P a g e
 
 # python --version
 # pip --version
